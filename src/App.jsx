@@ -1,11 +1,26 @@
 import "./App.css";
+import Header from "./components/1-header/header";
+import Hero from "./components/2-hero/Hero";
+import Mian from "./components/3-main/Mian";
+import Contact from "./components/4-contact/Contact";
+import Footer from "./components/5-footer/Footer";
 
 function App() {
-  return <>
-  
-  
-  
-  </>;
+  return (
+    <>
+      <div className="container">
+        <Header />
+        <div className="divider" />
+        <Hero />
+        <div className="divider" />
+        <Mian />
+        <div className="divider" />
+        <Contact />
+        <div className="divider" />
+        <Footer />
+      </div>
+    </>
+  );
 }
 
 export default App;
