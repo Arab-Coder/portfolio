@@ -8,11 +8,65 @@ ul li a:hover {
   color: var(--blue);
   opacity: 1;
   font-size: 0.9rem;
-  
 }
 
 nav {
   background: var(--bgHeader);
   padding: 0.77rem 1.6rem;
   border-radius: 55px;
+  box-shadow: 1px 1px 20px rgba(66, 56, 56, 0.219);
+}
+
+.fixed {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(40, 40, 48, 0.91);
+  z-index: 11;
+}
+@keyframes mymove {
+  0% {
+    scale: 0;
+  }
+  60% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
+}
+.fixed ul.model {
+  animation: mymove 0.7s ;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  background-color: var(--secondary);
+}
+.fixed ul li {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.8rem;
+  padding-top: 0.5rem;
+}
+.fixed ul li:last-child {
+  border: none;
+}
+.fixed ul li:first-child {
+  text-align: right;
+  border-bottom: none;
+  padding-bottom: 0rem;
+  padding-top: 0.2rem;
+}
+
+.fixed ul li a {
+  font-size: 1rem;
+}
+
+@media (max-width: 700px) {
+  nav {
+    display: none;
+  }
+  .menu {
+    display: block;
+  }
 }
