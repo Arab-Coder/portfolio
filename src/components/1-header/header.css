@@ -1,72 +1,156 @@
+/* روابط القائمة */
 ul li a {
   color: var(--title);
   opacity: 0.9;
-  font-size: 0.88rem;
+  font-size: 0.9rem; /* 0.88 -> 0.9 لمطابقة الهوفر */
   font-weight: 500;
+  letter-spacing: 0.2px;
 }
+
 ul li a:hover {
   color: var(--blue);
   opacity: 1;
-  font-size: 0.9rem;
 }
 
+/* شريط التنقّل */
 nav {
   background: var(--bgHeader);
-  padding: 0.77rem 1.6rem;
-  border-radius: 55px;
-  box-shadow: 1px 1px 20px rgba(66, 56, 56, 0.219);
+  padding: 0.75rem 1.25rem; /* ضبط بسيط للمسافات */
+  border-radius: 999px; /* 55px -> pill */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25); /* ظلال أنعم */
+  border: 1px solid var(--border); /* حدود خفيفة */
 }
 
+/* تباعد عناصر القائمة الأفقية (بدون تعديل HTML) */
+nav ul {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* غطاء المودال */
 .fixed {
   position: fixed;
   inset: 0;
-  background-color: rgba(40, 40, 48, 0.91);
-  z-index: 11;
+  background-color: rgba(24, 24, 28, 0.7); /* أغمق قليلًا */
+  backdrop-filter: blur(4px); /* ضبابية خفيفة */
+  z-index: 50;
+  backdrop-filter: blur(4px);
 }
+
+/* حركة ناعمة */
 @keyframes mymove {
   0% {
-    scale: 0;
+    transform: scale(0.92);
+    opacity: 0;
   }
   60% {
-    scale: 1.2;
+    transform: scale(1.02);
+    opacity: 1;
   }
   100% {
-    scale: 1;
+    transform: scale(1);
   }
 }
+
+/* صندوق المودال */
 .fixed ul.model {
-  animation: mymove 0.7s ;
-  width: 85%;
-  margin-left: auto;
-  margin-right: auto;
+  animation: mymove 0.35s ease; /* أقصر وأنعم */
+  width: 90%;
+  max-width: 520px; /* حد أقصى للعرض */
+  margin: 10vh auto 0; /* نزول بسيط من الأعلى */
   border-radius: 1rem;
-  padding: 1rem 2rem;
+  padding: 1rem 1.25rem;
   background-color: var(--secondary);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
+
+/* عناصر المودال */
 .fixed ul li {
   border-bottom: 1px solid var(--border);
-  padding-bottom: 0.8rem;
-  padding-top: 0.5rem;
+  padding: 0.6rem 0;
 }
+
 .fixed ul li:last-child {
   border: none;
 }
+
 .fixed ul li:first-child {
   text-align: right;
   border-bottom: none;
-  padding-bottom: 0rem;
   padding-top: 0.2rem;
 }
 
+/* حجم أوضح داخل المودال */
 .fixed ul li a {
   font-size: 1rem;
 }
 
+/* زر القائمة (الهامبرجر) يكون مخفيًا على الديسكتوب) */
+.menu {
+  display: none;
+}
+
+/* استجابيّة */
 @media (max-width: 700px) {
   nav {
     display: none;
   }
   .menu {
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
+}
+.mode {
+  display: flex;
+}
+.mode,
+.menu {
+  background-color: var(--bgHeader);
+  border-radius: 50%;
+  height: 3.2rem;
+  width: 3.2rem;
+  justify-content: center;
+  align-items: center;
+  color: var(--subtitle);
+  border: 1px solid rgba(134, 96, 84, 0.254);
+}
+
+.menu:hover {
+  color: var(--title);
+}
+.close {
+  color: var(--subtitle);
+  border: 1px solid rgba(134, 96, 84, 0.254);
+}
+.close:hover {
+  color: var(--title);
+  color: crimson;
+  rotate: 180deg;
+}
+/* تأثير تحويم لطيف على الروابط داخل الناف/المودال */
+nav a,
+.fixed ul li a {
+  position: relative;
+}
+
+nav a::after,
+.fixed ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: var(--blue);
+  transition: transform 0.2s ease;
+}
+
+nav a:hover::after,
+.fixed ul li a:hover::after {
+  transform: scaleX(1);
 }

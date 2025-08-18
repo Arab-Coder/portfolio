@@ -8,9 +8,8 @@ import Footer from "./components/5-footer/Footer";
 function App() {
   return (
     <>
-      <div className="container">
+      <div className="container ">
         <Header />
-        <div className="divider" />
         <Hero />
         <div className="divider" />
         <Mian />

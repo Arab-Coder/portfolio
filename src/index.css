@@ -1,9 +1,14 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 html {
   font-family: "Roboto", sans-serif;
   letter-spacing: 0.2px;
+  color-scheme: dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
 :root {
   --primary: #000;
   --secondary: rgb(24, 24, 27);
@@ -12,6 +17,8 @@ html {
   --subtitle: rgb(161, 161, 170);
   --bgHeader: rgb(39, 39, 42);
   --blue: rgb(93, 188, 252);
+  --ring: rgba(93, 188, 252, 0.55);
+  --container-padding: 4.8rem;
 }
 
 * {
@@ -19,29 +26,73 @@ html {
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: var(--primary);
   color: #fff;
 }
 
 .container {
-  border: 2px solid var(--border);
+  border: 1px solid var(--border);
   width: 80%;
-  margin: auto;
-  padding: auto;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: var(--container-padding); /* كان padding: auto (غير صحيح) */
   background-color: var(--secondary);
+  border-radius: 1rem;
 }
-
+@media (max-width: 600px) {
+  .container {
+    width: 98%;
+    padding: 0.8rem;
+  }
+}
+@media (max-width: 1000px) {
+  .container {
+    width: 90%;
+    padding: 0 var(--container-padding);
+  }
+  .divider {
+    width: calc(100% +var(--container-padding) + var(--container-padding));
+    margin-right: var(--container-padding);
+  }
+}
 .divider {
   border: 1px solid var(--border);
   margin: 3rem;
+  width: calc(100% +var(--container-padding)+ var(--container-padding));
+  margin-right: var(--container-padding);
 }
 
 li {
   list-style: none;
 }
+
 a {
   text-decoration: none;
-  color: initial;
-  transition: 0.2s;
+  color: inherit;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover {
+  cursor: pointer;
+}
+button:active {
+  scale: 0.9;
+}
+
+/* تحسين قابلية الوصول للروابط والأزرار */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+/* احترام تفضيل تقليل الحركة */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }

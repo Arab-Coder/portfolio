@@ -1,0 +1,84 @@
+.left-section {
+  flex-direction: column;
+}
+.left-section button {
+  background-color: rgba(36, 37, 46, 1);
+  width: 11rem;
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 1.05rem;
+  text-decoration: capitalize;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+.left-section button:hover {
+  opacity: 1;
+}
+.left-section .active {
+  opacity: 1;
+  font-weight: bold;
+  letter-spacing: 0.6px;
+  padding: 0.8rem 0;
+  border: 1px solid var(--blue);
+  border-radius: 5px;
+}
+
+.card {
+  border: solid 1px rgba(93, 188, 252, 0.3);
+  transition: 0.4s;
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.1)
+  );
+}
+.card:hover {
+  border: 1px solid var(--blue);
+  rotate: 1.5deg;
+  scale: 1.01;
+  cursor: pointer;
+}
+.box {
+  padding: 1rem 0.4rem;
+}
+.box .title {
+  color: var(--title);
+}
+.sub-title {
+  color: var(--subtitle);
+  font-size: 0.8rem;
+  margin-top: 0.7rem;
+  margin-bottom: 0.8rem;
+}
+.box .icons {
+  justify-content: space-between;
+}
+.FaLink,
+.FaGithub {
+  color: var(--subtitle);
+}
+.FaLink :hover,
+.FaGithub :hover {
+  color: var(--ring);
+  transition: 0.3s;
+  cursor: pointer;
+}
+a.link {
+  color: var(--blue);
+  margin-right: 10px;
+}
+@media (max-width: 750px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+  .left-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .left-section button {
+    width: 7rem;
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+}
