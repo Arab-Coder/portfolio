@@ -1,0 +1,132 @@
+/* -------- العناوين -------- */
+.icon-email {
+  color: var(--subtitle);
+  margin-right: 0.6rem;
+  font-size: 1.8rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.1rem;
+  color: var(--title);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sub-titel {
+  color: var(--subtitle);
+  margin-bottom: 1.75rem;
+  line-height: 1.7;
+  max-width: 40rem;
+}
+
+/* -------- هيكل الفورم -------- */
+form {
+  background: rgba(63, 63, 70, 0.08);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgb(63 63 70);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  width: 100%;
+  max-width: 600px;
+}
+
+form .flex {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+label {
+  color: var(--subtitle);
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+/* -------- الحقول -------- */
+#email,
+#message {
+  background-color: rgba(63, 63, 70, 0.15);
+  border: 1px solid rgb(63 63 70);
+  color: var(--title);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#email::placeholder,
+#message::placeholder {
+  color: #9ca3af;
+}
+
+#email:hover,
+#message:hover {
+  border-color: rgba(45, 212, 191, 0.6);
+}
+
+#email:focus,
+#message:focus {
+  border-color: rgb(45 212 191);
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.25);
+  outline: none;
+}
+
+#message {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+/* -------- الزر -------- */
+.submit {
+  border: none;
+  border-radius: 8px;
+  padding: 0.85rem 1.2rem;
+  background: linear-gradient(135deg, rgb(45,212,191), rgb(20,184,166));
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.submit:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 6px 20px rgba(45,212,191,0.3);
+}
+
+.submit:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.submit:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(45, 212, 191, 0.25);
+}
+
+/* -------- تجاوب -------- */
+@media (min-width: 640px) {
+  form .flex {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  label {
+    flex: 0 0 120px;
+    margin-bottom: 0;
+    text-align: right;
+  }
+
+  #email,
+  #message {
+    flex: 1;
+  }
+
+  #message {
+    min-height: 7rem;
+  }
+}

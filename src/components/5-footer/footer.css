@@ -1,0 +1,48 @@
+footer {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+footer ul {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+li a {
+  color: var(--subtitle);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: color 0.2s ease, transform 0.15s ease;
+}
+
+li a:hover {
+  color: var(--title);
+  transform: translateY(-2px);
+}
+
+p {
+  color: rgb(113 113 122); /* كان فيه خطأ rgp → rgb */
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* -------- تجاوب -------- */
+@media (min-width: 800px) {
+  footer {
+    justify-content: flex-start;
+  }
+
+  footer ul {
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+}
