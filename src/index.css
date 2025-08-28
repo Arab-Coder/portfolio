@@ -46,6 +46,9 @@ body {
     width: 98%;
     padding: 0.8rem;
   }
+  .icon-keyboard_arrow_up {
+    opacity: 0.5;
+  }
 }
 @media (max-width: 1000px) {
   .container {
@@ -88,7 +91,16 @@ button:focus-visible {
   outline-offset: 2px;
   border-radius: 10px;
 }
-
+.icon-keyboard_arrow_up {
+  background-color: rgba(17, 68, 107, 0.85);
+  border-radius: 50%;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+}
+.icon-keyboard_arrow_up:hover{
+  background-color:  rgb(25, 118, 210);
+}
 /* احترام تفضيل تقليل الحركة */
 @media (prefers-reduced-motion: reduce) {
   * {

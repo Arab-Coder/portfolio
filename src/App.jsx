@@ -4,6 +4,8 @@ import Hero from "./components/2-hero/Hero";
 import Mian from "./components/3-main/Mian";
 import Contact from "./components/4-contact/Contact";
 import Footer from "./components/5-footer/Footer";
+import { FaRegArrowAltCircleUp } from "react-icons/fa";
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         <Contact />
         <div className="divider" />
         <Footer />
+        <button className="icon-keyboard_arrow_up"><FaRegArrowAltCircleUp size={"25px"}/></button>
       </div>
     </>
   );

@@ -5,7 +5,6 @@ import { FaTwitter } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
-import { FaRegArrowAltCircleUp } from "react-icons/fa";
 
 export default function Hero() {
   return (
